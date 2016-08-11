@@ -175,6 +175,12 @@ class PokemonGoBot(object):
             )
         )
         self.event_manager.register_event(
+            'moving_to_home',
+            parameters=(
+                'distance'
+            )
+        )
+        self.event_manager.register_event(
             'moving_to_fort',
             parameters=(
                 'fort_name',
@@ -213,6 +219,7 @@ class PokemonGoBot(object):
         )
         self.event_manager.register_event('pokestop_searching_too_often')
         self.event_manager.register_event('arrived_at_fort')
+        self.event_manager.register_event('arrived_at_home')
 
         # pokemon stuff
         self.event_manager.register_event(
